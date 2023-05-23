@@ -13,6 +13,7 @@ import theme from './src/theme';
 import { Loading } from '@components/Loading';
 
 import { Home } from '@screens/Home';
+import { Statistic } from '@screens/Statistic';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +28,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Statistic /> : <Loading />}
     </ThemeProvider>
   );
 }
