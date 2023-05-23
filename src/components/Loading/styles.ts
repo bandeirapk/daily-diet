@@ -14,7 +14,6 @@ export const LoadIndicator = styled.ActivityIndicator.attrs(({ theme }) => ({
 }))``;
 
 export const LoadText = styled.Text`
-  font-family: ${({ theme }) => theme.FONTS.FONTS_FAMILY.regular};
-  font-size: ${({ theme }) => theme.FONTS.FONTS_SIZE.large};
+  font-size: ${({ theme }) => theme.FONTS.FONTS_SIZE.large}px;
   color: ${({ theme }) => theme.COLORS.BASE.gray_200};
 `;
