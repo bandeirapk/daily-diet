@@ -9,7 +9,7 @@ type Props = {
   size?: number;
 };
 
-export const Container = styled.View<Props>`
+export const Container = styled.TouchableOpacity<Props>`
   width: ${({ size }) => size || 100}%;
 
   flex-direction: row;

@@ -15,6 +15,7 @@ import { Loading } from '@components/Loading';
 import { Home } from '@screens/Home';
 import { Statistic } from '@screens/Statistic';
 import { NewMeals } from '@screens/NewMeals';
+import { Feedback } from '@screens/Feedback';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +30,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <NewMeals /> : <Loading />}
+      {fontsLoaded ? <Feedback /> : <Loading />}
     </ThemeProvider>
   );
 }
