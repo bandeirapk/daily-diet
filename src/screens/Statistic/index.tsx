@@ -12,7 +12,7 @@ export function Statistic() {
 
   return (
     <Container>
-      <HeaderStatistic />
+      <HeaderStatistic ShowStatic={true} />
 
       <Content>
         <Title>Estatística gerais</Title>

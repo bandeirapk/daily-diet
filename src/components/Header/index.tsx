@@ -1,15 +1,23 @@
 import React from 'react';
 
-import LogoSvg from '@assets/svg/logoDailyDiet.svg';
+import { useTheme } from 'styled-components';
 
-import { Container, ProfilePhoto } from './styles';
+import { Container, BackButton, BackIcon, Title } from './styles';
 
-export function Header() {
+type Props = {
+  title: string;
+};
+
+export function Header({ title }: Props) {
+  const theme = useTheme();
+
   return (
     <Container>
-      <LogoSvg />
+      <BackButton>
+        <BackIcon />
+      </BackButton>
 
-      <ProfilePhoto source={{ uri: 'https://www.github.com/bandeirapk.png' }} />
+      <Title>{title}</Title>
     </Container>
   );
 }

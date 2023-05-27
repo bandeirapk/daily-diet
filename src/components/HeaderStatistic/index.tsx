@@ -20,7 +20,6 @@ export function HeaderStatistic() {
       </BackButton>
 
       <PercentTitle>90,86%</PercentTitle>
-
       <SubTitle>das refeições dentro da dieta</SubTitle>
     </Container>
   );

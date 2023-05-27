@@ -2,7 +2,7 @@ import React from 'react';
 
 import { View, SectionList, Text } from 'react-native';
 
-import { Header } from '@components/Header';
+import { HeaderHome } from '@components/HeaderHome';
 import { HomePercentCard } from '@components/HomePercentCard';
 import { ButtonIcon } from '@components/ButtonIcon';
 import { MealCard } from '@components/MealCard';
@@ -91,7 +91,7 @@ export function Home() {
         renderItem={({ item }) => <MealCard />}
         ListHeaderComponent={() => (
           <View>
-            <Header />
+            <HeaderHome />
 
             <HomePercentCard />
 

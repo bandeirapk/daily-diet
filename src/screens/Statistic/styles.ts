@@ -4,6 +4,8 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
+
+  background-color: ${({ theme }) => theme.COLORS.PRODUCT.green_light};
 `;
 
 export const Content = styled.View`

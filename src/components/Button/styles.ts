@@ -26,5 +26,5 @@ export const Title = styled.Text`
     font-size: ${theme.FONTS.FONTS_SIZE.medium}px;
     font-family: ${theme.FONTS.FONTS_FAMILY.bold};
   `}
-  margin-left: 12px;
+  font-weight: 700;
 `;
