@@ -58,7 +58,7 @@ export function NewMeals() {
         </DietAskContainer>
 
         <ButtonContainer>
-          <Button />
+          <Button title="Cadastrar refeição" />
         </ButtonContainer>
       </Content>
     </Container>

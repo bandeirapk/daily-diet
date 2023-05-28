@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Button } from '@components/Button';
 
-import personImg from '@assets/img/illustration.png';
+import positivePersonImg from '@assets/img/positiveFeedback.png';
+import negativePersonImg from '@assets/img/negativeFeedback.png';
 
 import { Container, Title, Subtitle, ImageRepresentation } from './styles';
-import { Text } from 'react-native';
 
 export function Feedback() {
   return (
@@ -13,12 +13,12 @@ export function Feedback() {
       <Title>Continue assim!</Title>
       <Subtitle>Você continua da dieta. Muito bem!</Subtitle>
 
-      <ImageRepresentation
-        source={personImg}
-        resizeMode="contain"
-      />
+      <ImageRepresentation source={negativePersonImg} />
 
-      <Button />
+      <Button
+        title="Ir para a página inicial"
+        size={50}
+      />
     </Container>
   );
 }

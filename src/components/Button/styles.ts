@@ -2,8 +2,12 @@ import styled, { css } from 'styled-components/native';
 
 import { Plus } from 'phosphor-react-native';
 
-export const Container = styled.TouchableOpacity`
-  width: 100%;
+type Props = {
+  size?: number;
+};
+
+export const Container = styled.TouchableOpacity<Props>`
+  width: ${({ size }) => (size ? size : '100%')}%;
   height: 50px;
 
   flex-direction: row;

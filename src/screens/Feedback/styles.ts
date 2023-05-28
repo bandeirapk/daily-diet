@@ -29,5 +29,6 @@ export const ImageRepresentation = styled.Image`
   height: 288px;
   width: 224px;
 
+  margin-top: 40px;
   margin-bottom: 32px;
 `;

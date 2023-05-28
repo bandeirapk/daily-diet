@@ -2,10 +2,19 @@ import React from 'react';
 
 import { Container, IconButton, Title } from './styles';
 
-export function Button() {
+type Props = {
+  title: string;
+  size?: number;
+};
+
+export function Button({ title, size, ...rest }: Props) {
   return (
-    <Container activeOpacity={0.7}>
-      <Title> Cadastrar refeição </Title>
+    <Container
+      activeOpacity={0.7}
+      size={size}
+      {...rest}
+    >
+      <Title> {title} </Title>
     </Container>
   );
 }
