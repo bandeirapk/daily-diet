@@ -3,17 +3,18 @@ import React from 'react';
 import { useTheme } from 'styled-components';
 
 import { Container, BackButton, BackIcon, Title } from './styles';
+import { TouchableOpacityProps } from 'react-native';
 
-type Props = {
+type Props = TouchableOpacityProps & {
   title: string;
 };
 
-export function Header({ title }: Props) {
+export function Header({ title, ...rest }: Props) {
   const theme = useTheme();
 
   return (
     <Container>
-      <BackButton>
+      <BackButton {...rest}>
         <BackIcon />
       </BackButton>
 

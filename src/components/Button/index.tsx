@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { Container, IconButton, Title } from './styles';
+import { TouchableOpacityProps } from 'react-native';
 
-type Props = {
+import { Container, Title } from './styles';
+
+type Props = TouchableOpacityProps & {
   title: string;
   size?: number;
 };

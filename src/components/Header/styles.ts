@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components/native';
 
 import { ArrowLeft } from 'phosphor-react-native';
+
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
@@ -16,12 +17,7 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.COLORS.PRODUCT.green_light};
 `;
 
-export const BackButton = styled.TouchableOpacity`
-  /* position: absolute;
-
-  left: 24px;
-  top: 56px; */
-`;
+export const BackButton = styled.TouchableOpacity``;
 
 export const BackIcon = styled(ArrowLeft).attrs(({ theme }) => ({
   size: theme.FONTS.FONTS_SIZE.xxlarge,

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Header } from '@components/Header';
 import { Input } from '@components/Input';
 import { CheckBox } from '@components/CheckBox';
@@ -14,10 +16,19 @@ import {
   ButtonContainer,
 } from './styles';
 
-export function NewMeals() {
+export function NewMeal() {
+  const navigation = useNavigation();
+
+  function handleCreateNewMeal() {
+    navigation.navigate('feedback');
+  }
+
   return (
     <Container>
-      <Header title="Nova refeição" />
+      <Header
+        title="Nova refeição"
+        onPress={() => navigation.navigate('home')}
+      />
 
       <Content>
         <Input title="Nome" />
@@ -58,7 +69,10 @@ export function NewMeals() {
         </DietAskContainer>
 
         <ButtonContainer>
-          <Button title="Cadastrar refeição" />
+          <Button
+            title="Cadastrar refeição"
+            onPress={handleCreateNewMeal}
+          />
         </ButtonContainer>
       </Content>
     </Container>

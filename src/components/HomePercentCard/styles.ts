@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components/native';
 import { ArrowUpRight } from 'phosphor-react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   height: 102px;
 
   justify-content: center;

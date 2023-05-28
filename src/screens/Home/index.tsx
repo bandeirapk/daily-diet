@@ -2,6 +2,8 @@ import React from 'react';
 
 import { View, SectionList, Text } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { HeaderHome } from '@components/HeaderHome';
 import { HomePercentCard } from '@components/HomePercentCard';
 import { ButtonIcon } from '@components/ButtonIcon';
@@ -22,6 +24,8 @@ type Props = {
 };
 
 export function Home() {
+  const navigation = useNavigation();
+
   const sections = [
     {
       titleTime: '12.08.22',
@@ -83,20 +87,38 @@ export function Home() {
     },
   ] as Props[];
 
+  function handleViewStatistics() {
+    navigation.navigate('statistic');
+  }
+
+  function handleCreateNewMeal() {
+    navigation.navigate('new');
+  }
+
+  function handleViewMeal() {
+    navigation.navigate('meal');
+  }
+
   return (
     <Container>
       <SectionList
         sections={sections}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => <MealCard />}
+        renderItem={({ item }) => <MealCard onPress={handleViewMeal} />}
         ListHeaderComponent={() => (
           <View>
             <HeaderHome />
 
-            <HomePercentCard />
+            <HomePercentCard onPress={handleViewStatistics} />
 
             <TextMeal>Refeições</TextMeal>
-            <ButtonIcon />
+
+            <ButtonIcon
+              title="Nova refeição"
+              type="BACKGROUND"
+              color="white"
+              onPress={handleCreateNewMeal}
+            />
           </View>
         )}
         renderSectionHeader={({ section: { titleTime } }) => (

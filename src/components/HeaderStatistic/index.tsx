@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { TouchableOpacityProps } from 'react-native';
+
 import { useTheme } from 'styled-components';
 
 import {
@@ -10,12 +12,14 @@ import {
   SubTitle,
 } from './styles';
 
-export function HeaderStatistic() {
+type Props = TouchableOpacityProps & {};
+
+export function HeaderStatistic({ ...rest }: Props) {
   const theme = useTheme();
 
   return (
     <Container>
-      <BackButton>
+      <BackButton {...rest}>
         <BackIcon />
       </BackButton>
 

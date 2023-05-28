@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { Header } from '@components/Header';
 import { ButtonIcon } from '@components/ButtonIcon';
 
@@ -17,10 +19,15 @@ import {
   ButtonContainer,
 } from './styles';
 
-export function Meals() {
+export function Meal() {
+  const navigation = useNavigation();
+
   return (
     <Container>
-      <Header title="Refeição" />
+      <Header
+        title="Refeição"
+        onPress={() => navigation.navigate('home')}
+      />
 
       <Content>
         <Title>Sanduíche</Title>

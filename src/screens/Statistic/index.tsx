@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useTheme } from 'styled-components/native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { HeaderStatistic } from '@components/HeaderStatistic';
 import { CardStatistic } from '@components/CardStatistic';
 
@@ -9,10 +11,11 @@ import { Container, Content, Title, MealsInDiet } from './styles';
 
 export function Statistic() {
   const theme = useTheme();
+  const navigation = useNavigation();
 
   return (
     <Container>
-      <HeaderStatistic ShowStatic={true} />
+      <HeaderStatistic onPress={() => navigation.goBack()} />
 
       <Content>
         <Title>Estatística gerais</Title>
