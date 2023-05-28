@@ -1,13 +1,35 @@
-import React from 'react';
+import { TouchableOpacityProps } from 'react-native';
 
-import { Container, IconButton, Title } from './styles';
+import {
+  ButtonIconTypeStyleProps,
+  Container,
+  IconButton,
+  Title,
+} from './styles';
 
-export function ButtonIcon() {
+type Props = TouchableOpacityProps & {
+  title: string;
+  icon?: JSX.Element;
+  type?: ButtonIconTypeStyleProps;
+  color?: string;
+};
+
+export function ButtonIcon({
+  title,
+  icon,
+  type = 'BACKGROUND',
+  color = 'black',
+  ...rest
+}: Props) {
   return (
-    <Container activeOpacity={0.7}>
-      <IconButton />
+    <Container
+      activeOpacity={0.7}
+      type={type}
+      {...rest}
+    >
+      {icon ? icon : <IconButton color={color} />}
 
-      <Title> Nova refeição </Title>
+      <Title type={type}>{title}</Title>
     </Container>
   );
 }

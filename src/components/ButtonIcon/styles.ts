@@ -1,8 +1,14 @@
 import styled, { css } from 'styled-components/native';
 
-import { Plus } from 'phosphor-react-native';
+import { Plus, PencilSimpleLine } from 'phosphor-react-native';
 
-export const Container = styled.TouchableOpacity`
+export type ButtonIconTypeStyleProps = 'BACKGROUND' | 'NO_BACKGROUND';
+
+type Props = {
+  type: ButtonIconTypeStyleProps;
+};
+
+export const Container = styled.TouchableOpacity<Props>`
   width: 100%;
   height: 50px;
 
@@ -10,19 +16,28 @@ export const Container = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
 
-  border-radius: 6px;
+  margin-top: 9px;
 
-  background-color: ${({ theme }) => theme.COLORS.BASE.gray_200};
+  border-radius: 6px;
+  border-width: ${({ type }) => (type == 'BACKGROUND' ? 0 : 1)}px;
+
+  background-color: ${({ theme, type }) =>
+    type == 'BACKGROUND'
+      ? theme.COLORS.BASE.gray_200
+      : theme.COLORS.BASE.white};
 `;
 
-export const IconButton = styled(Plus).attrs(({ theme }) => ({
+export const IconButton = styled(Plus).attrs(({ theme, color }) => ({
   size: 18,
-  color: theme.COLORS.BASE.white,
+  color:
+    color === 'black' ? theme.COLORS.BASE.gray_100 : theme.COLORS.BASE.white,
 }))``;
 
-export const Title = styled.Text`
-  ${({ theme }) => css`
-    color: ${theme.COLORS.BASE.white};
+export const Title = styled.Text<Props>`
+  ${({ theme, type }) => css`
+    color: ${type === 'BACKGROUND'
+      ? theme.COLORS.BASE.white
+      : theme.COLORS.BASE.gray_100};
     font-size: ${theme.FONTS.FONTS_SIZE.medium}px;
     font-family: ${theme.FONTS.FONTS_FAMILY.bold};
   `}
