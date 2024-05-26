@@ -2,7 +2,7 @@ import { SectionList } from "react-native"
 
 import LogoSvg from "@/assets/logo.svg"
 
-import meals from "../utils/data"
+import meals from "../../utils/data"
 
 import { CardPercentMeal } from "@/components/CardPercentMeal"
 import { Button } from "@/components/Button"

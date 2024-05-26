@@ -10,6 +10,7 @@ import { ThemeProvider } from "styled-components/native"
 import theme from "@/theme"
 
 import { Home } from "@/screens/Home"
+import { Statistics } from "@/screens/Statistics"
 
 import { Loading } from "@/components/Loading"
 
@@ -31,7 +32,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <Home /> : <Loading />}
+        {fontsLoaded ? <Statistics /> : <Loading />}
       </View>
     </ThemeProvider>
   )
