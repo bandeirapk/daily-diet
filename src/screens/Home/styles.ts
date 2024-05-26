@@ -34,3 +34,12 @@ export const ProfileImage = styled.Image`
   border-width: 2px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_200};
 `
+
+export const TextList = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.LG}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.GRAY_100};
+  `}
+  margin-top: 32px;
+`
