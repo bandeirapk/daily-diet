@@ -1,3 +1,5 @@
+import { useTheme } from "styled-components/native"
+
 import { Header } from "@/components/Header"
 
 import {
@@ -10,9 +12,9 @@ import {
   DailyMeat
 } from "./styles"
 
-type BoxStatisticsProps = {}
-
 export function Statistics() {
+  const theme = useTheme()
+
   return (
     <Container>
       <Header />
@@ -32,12 +34,12 @@ export function Statistics() {
           </Box>
 
           <DailyMeat>
-            <Box>
+            <Box style={{ backgroundColor: theme.COLORS.GREEN_LIGHT }}>
               <Title isBox>99</Title>
               <Subtitle>refeições dentro da dieta</Subtitle>
             </Box>
 
-            <Box>
+            <Box style={{ backgroundColor: theme.COLORS.RED_LIGHT }}>
               <Title isBox>10</Title>
               <Subtitle>refeições fora da dieta</Subtitle>
             </Box>

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components/native"
 
-type titleBox = {
+type TitleProps = {
   isBox?: boolean
 }
 
@@ -21,7 +21,7 @@ export const Content = styled.View`
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 `
 
-export const Title = styled.Text<titleBox>`
+export const Title = styled.Text<TitleProps>`
   ${({ theme, isBox }) => css`
     font-size: ${isBox ? theme.FONT_SIZE.XL : theme.FONT_SIZE.SM}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
