@@ -2,7 +2,8 @@ import { CardPercentMeal } from "@/components/CardPercentMeal"
 
 import LogoSvg from "@/assets/logo.svg"
 
-import { Container, ContainerHeaderHome, ProfileImage } from "./styles"
+import { Container, ContainerHeaderHome, ProfileImage, Text } from "./styles"
+import { Button } from "@/components/Button"
 
 export function Home() {
   return (
@@ -13,6 +14,14 @@ export function Home() {
       </ContainerHeaderHome>
 
       <CardPercentMeal />
+
+      <Button>
+        <Text>Refeições</Text>
+        <Button.Icon
+          icon="add"
+          title="Nova refeição"
+        />
+      </Button>
     </Container>
   )
 }

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
@@ -14,6 +14,16 @@ export const ContainerHeaderHome = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`
+
+export const Text = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+    color: ${theme.COLORS.GRAY_100};
+  `}
+  margin-top: 40px;
+  margin-bottom: 8px;
 `
 
 export const ProfileImage = styled.Image`
