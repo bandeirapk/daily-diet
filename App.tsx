@@ -11,6 +11,7 @@ import theme from "@/theme"
 
 import { Home } from "@/screens/Home"
 import { Statistics } from "@/screens/Statistics"
+import { RegisterMeal } from "@/screens/RegisterMeal"
 
 import { Loading } from "@/components/Loading"
 
@@ -32,7 +33,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <Statistics /> : <Loading />}
+        {fontsLoaded ? <Home /> : <Loading />}
       </View>
     </ThemeProvider>
   )

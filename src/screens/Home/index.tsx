@@ -43,6 +43,7 @@ export function Home() {
           <TextList>{title}</TextList>
         )}
         showsVerticalScrollIndicator={false}
+        style={{ marginTop: 32 }}
       />
     </Container>
   )

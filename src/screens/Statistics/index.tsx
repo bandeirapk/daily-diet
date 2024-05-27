@@ -17,7 +17,9 @@ export function Statistics() {
 
   return (
     <Container>
-      <Header />
+      <Header bgGreen>
+        <Header.Statistics />
+      </Header>
 
       <Content>
         <Title>Estatísticas Gerais</Title>

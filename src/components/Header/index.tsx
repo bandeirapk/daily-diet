@@ -1,14 +1,55 @@
-import { Container, SubTitle, Title, Icon, IconContainer } from "./styles"
+import { ReactNode } from "react"
 
-export function Header() {
+import {
+  Container,
+  Subtitle,
+  Title,
+  TitleHeader,
+  Icon,
+  IconContainerStatistics,
+  DefaultContainerHeader,
+  HeaderStatisticsContainer
+} from "./styles"
+
+type HeaderProps = {
+  children: ReactNode
+  bgGreen?: boolean
+}
+
+function Header({ children, bgGreen }: HeaderProps) {
+  return <Container isBgGreen={bgGreen}>{children}</Container>
+}
+
+function HeaderTitleStatistics() {
   return (
-    <Container>
-      <IconContainer>
+    <>
+      <IconContainerStatistics>
         <Icon />
-      </IconContainer>
+      </IconContainerStatistics>
 
-      <Title>90,86%</Title>
-      <SubTitle>das refeições dentro da dieta</SubTitle>
-    </Container>
+      <HeaderStatisticsContainer>
+        <Title>90,86%</Title>
+        <Subtitle>das refeições dentro da dieta</Subtitle>
+      </HeaderStatisticsContainer>
+    </>
   )
 }
+
+function HeaderTitleDefault() {
+  return (
+    <>
+      <IconContainerStatistics>
+        <Icon />
+      </IconContainerStatistics>
+
+      <DefaultContainerHeader>
+        <TitleHeader>Nova refeição</TitleHeader>
+      </DefaultContainerHeader>
+    </>
+  )
+}
+
+Header.Statistics = HeaderTitleStatistics
+Header.Default = HeaderTitleDefault
+
+export { Header }
