@@ -1,4 +1,4 @@
-import styled from "styled-components/native"
+import styled, { css } from "styled-components/native"
 
 export const Container = styled.View`
   flex: 1;
@@ -9,11 +9,30 @@ export const Container = styled.View`
 export const Content = styled.View`
   flex: 1;
   width: 100%;
+  gap: 34px;
 
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 
-  padding: 24px;
+  padding: 40px 24px;
 
   background-color: ${({ theme }) => theme.COLORS.WHITE};
+`
+
+export const OptionSelectContainer = styled.View`
+  width: 100%;
+
+  gap: 10px;
+
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const TitleSelectContainer = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.SM}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.GRAY_200};
+  `}
+  margin-bottom: 8px;
 `

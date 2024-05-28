@@ -15,6 +15,8 @@ export const TextInput = styled.TextInput`
   width: 100%;
   min-height: 48px;
 
+  margin-bottom: 24px;
+
   border-radius: 8px;
   border-width: 1px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_500};
@@ -26,6 +28,8 @@ export const InputMultiline = styled.TextInput`
   width: 100%;
   height: 120px;
 
+  margin-bottom: 24px;
+
   border-radius: 8px;
   border-width: 1px;
   border-color: ${({ theme }) => theme.COLORS.GRAY_500};
@@ -34,7 +38,7 @@ export const InputMultiline = styled.TextInput`
 `
 
 export const InputDateAndTime = styled.TextInput`
-  min-width: 48%;
+  min-width: 46%;
   min-height: 48px;
 
   border-radius: 8px;
