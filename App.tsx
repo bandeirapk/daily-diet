@@ -33,7 +33,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <Home /> : <Loading />}
+        {fontsLoaded ? <RegisterMeal /> : <Loading />}
       </View>
     </ThemeProvider>
   )

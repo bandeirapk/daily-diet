@@ -1,6 +1,7 @@
-import { Container } from "./styles"
+import { Container, Content } from "./styles"
 
 import { Header } from "@/components/Header"
+import { Input } from "@/components/Input"
 
 export function RegisterMeal() {
   return (
@@ -8,6 +9,14 @@ export function RegisterMeal() {
       <Header>
         <Header.Default />
       </Header>
+
+      <Content>
+        <Input>
+          <Input.Field title="Nome" />
+          <Input.FieldMultiline title="Descrição" />
+          <Input.DateAndTime />
+        </Input>
+      </Content>
     </Container>
   )
 }
