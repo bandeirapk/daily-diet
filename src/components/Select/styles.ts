@@ -1,8 +1,11 @@
 import styled, { css } from "styled-components/native"
 
-import { SelectProps } from "."
+export type SelectProps = {
+  isSelected?: boolean
+  title?: "Sim" | "Não"
+}
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.TouchableOpacity<SelectProps>`
   min-height: 50px;
 
   flex: 1;
@@ -16,6 +19,17 @@ export const Container = styled.TouchableOpacity`
   padding: 16px;
 
   background-color: ${({ theme }) => theme.COLORS.GRAY_600};
+
+  ${({ theme, isSelected, title }) =>
+    isSelected &&
+    css`
+      border: 1px solid
+        ${title === "Sim" ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK};
+
+      background-color: ${title === "Sim"
+        ? theme.COLORS.GREEN_LIGHT
+        : theme.COLORS.RED_LIGHT};
+    `}
 `
 
 export const Status = styled.View<SelectProps>`

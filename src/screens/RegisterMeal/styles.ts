@@ -36,3 +36,14 @@ export const TitleSelectContainer = styled.Text`
   `}
   margin-bottom: 8px;
 `
+
+export const ButtonContainer = styled.View`
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+
+  align-self: center;
+
+  padding-bottom: 25px;
+`

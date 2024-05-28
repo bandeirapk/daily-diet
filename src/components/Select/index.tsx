@@ -1,13 +1,15 @@
 import { TouchableOpacityProps } from "react-native"
-import { Container, Status, Title } from "./styles"
+import { Container, Status, Title, SelectProps } from "./styles"
 
-export type SelectProps = TouchableOpacityProps & {
-  title: "Sim" | "Não"
-}
+type Props = TouchableOpacityProps & SelectProps & {}
 
-export function Select({ title, ...rest }: SelectProps) {
+export function Select({ title = "Sim", isSelected = false, ...rest }: Props) {
   return (
-    <Container {...rest}>
+    <Container
+      isSelected={isSelected}
+      title={title}
+      {...rest}
+    >
       <Status title={title} />
       <Title>{title}</Title>
     </Container>
