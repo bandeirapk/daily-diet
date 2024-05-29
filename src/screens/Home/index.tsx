@@ -31,6 +31,7 @@ export function Home() {
         <Button.Icon
           icon="add"
           title="Nova refeição"
+          activeOpacity={0.7}
         />
       </Button>
 

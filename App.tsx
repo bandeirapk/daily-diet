@@ -9,12 +9,7 @@ import { ThemeProvider } from "styled-components/native"
 
 import theme from "@/theme"
 
-import { Home } from "@/screens/Home"
-import { Statistics } from "@/screens/Statistics"
-import { RegisterMeal } from "@/screens/RegisterMeal"
-import { Feedback } from "@/screens/Feedback"
-import { Meal } from "@/screens/Meal"
-
+import { Routes } from "@/routes"
 import { Loading } from "@/components/Loading"
 
 export default function App() {
@@ -35,7 +30,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <Meal /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </View>
     </ThemeProvider>
   )
