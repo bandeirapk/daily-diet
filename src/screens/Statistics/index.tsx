@@ -1,4 +1,5 @@
 import { useTheme } from "styled-components/native"
+import { useNavigation } from "@react-navigation/native"
 
 import { Header } from "@/components/Header"
 
@@ -14,11 +15,19 @@ import {
 
 export function Statistics() {
   const theme = useTheme()
+  const navigation = useNavigation()
+
+  function handleGoBack() {
+    navigation.goBack()
+  }
 
   return (
     <Container>
       <Header healthyMealHeader="diet">
-        <Header.Statistics healthyMealHeader="diet" />
+        <Header.Statistics
+          healthyMealHeader="diet"
+          onPress={handleGoBack}
+        />
       </Header>
 
       <Content>

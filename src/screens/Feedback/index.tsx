@@ -1,4 +1,8 @@
+import { useNavigation } from "@react-navigation/native"
+
 import onDietPng from "@/assets/on-diet.png"
+
+import { Button } from "@/components/Button"
 
 import {
   Container,
@@ -9,9 +13,14 @@ import {
   Image,
   ButtonContainer
 } from "./styles"
-import { Button } from "@/components/Button"
 
 export function Feedback() {
+  const navigation = useNavigation()
+
+  function handleGoHome() {
+    navigation.navigate("home")
+  }
+
   return (
     <Container>
       <TextContainer>
@@ -26,7 +35,10 @@ export function Feedback() {
 
       <ButtonContainer>
         <Button>
-          <Button.Default title="Ir para a página inicial" />
+          <Button.Default
+            title="Ir para a página inicial"
+            onPress={handleGoHome}
+          />
         </Button>
       </ButtonContainer>
     </Container>

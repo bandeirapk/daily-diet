@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components/native';
+import styled, { css } from "styled-components/native"
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
 
   margin-top: 40px;
 
   padding: 0 24px;
-`;
+`
 
 export const ContainerHeaderHome = styled.View`
   display: flex;

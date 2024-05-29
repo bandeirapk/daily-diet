@@ -1,5 +1,7 @@
 import { ScrollView, View } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
+
 import { Header } from "@/components/Header"
 import { Input } from "@/components/Input"
 import { Select } from "@/components/Select"
@@ -14,11 +16,24 @@ import {
 } from "./styles"
 
 export function RegisterMeal() {
+  const navigation = useNavigation()
+
+  function handleGoBack() {
+    navigation.goBack()
+  }
+
+  function handleCreateNewMeal() {
+    navigation.navigate("feedback")
+  }
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
       <Container>
         <Header>
-          <Header.Default title="Nova refeição" />
+          <Header.Default
+            title="Nova refeição"
+            onPress={handleGoBack}
+          />
         </Header>
 
         <Content>
@@ -45,6 +60,7 @@ export function RegisterMeal() {
               <Button.Default
                 title="Cadastrar refeição"
                 activeOpacity={0.7}
+                onPress={handleCreateNewMeal}
               />
             </Button>
           </ButtonContainer>

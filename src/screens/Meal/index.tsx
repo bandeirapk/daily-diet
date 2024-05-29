@@ -1,5 +1,7 @@
 import { ScrollView, View } from "react-native"
 
+import { useNavigation } from "@react-navigation/native"
+
 import { Header } from "@/components/Header"
 import { Button } from "@/components/Button"
 
@@ -17,11 +19,20 @@ import {
 } from "./styles"
 
 export function Meal() {
+  const navigation = useNavigation()
+
+  function handleGoBack() {
+    navigation.goBack()
+  }
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
       <Container>
         <Header healthyMealHeader="diet">
-          <Header.Default title="Refeição" />
+          <Header.Default
+            title="Refeição"
+            onPress={handleGoBack}
+          />
         </Header>
 
         <Content>

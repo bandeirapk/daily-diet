@@ -1,3 +1,5 @@
+import { PressableProps } from "react-native"
+
 import {
   Container,
   ContainerDescriptionMeal,
@@ -6,9 +8,11 @@ import {
   StatusMeal
 } from "./styles"
 
-export function CardMeal() {
+type CardMealProps = PressableProps
+
+export function CardMeal({ ...rest }: CardMealProps) {
   return (
-    <Container>
+    <Container {...rest}>
       <ContainerDescriptionMeal>
         <Hour>12:00</Hour>
         <NameMeal

@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components/native';
+import styled, { css } from "styled-components/native"
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
   width: 100%;
 
   flex-direction: row;
@@ -12,7 +12,7 @@ export const Container = styled.View`
   border-color: ${({ theme }) => theme.COLORS.GRAY_500};
 
   padding: 17px 16px 17px 12px;
-`;
+`
 
 export const ContainerDescriptionMeal = styled.View`
   flex: 1;
@@ -36,7 +36,7 @@ export const Hour = styled.Text`
 `
 
 export const NameMeal = styled.Text`
-    ${({ theme }) => css`
+  ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.MD}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
     color: ${theme.COLORS.GRAY_200};
@@ -50,7 +50,7 @@ export const StatusMeal = styled.View`
   height: 14px;
 
   border-radius: 100px;
-  
+
   margin-left: 12px;
 
   background-color: ${({ theme }) => theme.COLORS.GREEN_DARK};

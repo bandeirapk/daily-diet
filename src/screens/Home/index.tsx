@@ -8,6 +8,8 @@ import { CardPercentMeal } from "@/components/CardPercentMeal"
 import { Button } from "@/components/Button"
 import { CardMeal } from "@/components/CardMeal"
 
+import { useNavigation } from "@react-navigation/native"
+
 import {
   Container,
   ContainerHeaderHome,
@@ -17,6 +19,12 @@ import {
 } from "./styles"
 
 export function Home() {
+  const navigation = useNavigation()
+
+  function handleCreateNewMeal() {
+    navigation.navigate("registerMeal")
+  }
+
   return (
     <Container>
       <ContainerHeaderHome>
@@ -32,6 +40,7 @@ export function Home() {
           icon="add"
           title="Nova refeição"
           activeOpacity={0.7}
+          onPress={handleCreateNewMeal}
         />
       </Button>
 
@@ -43,8 +52,9 @@ export function Home() {
         renderSectionHeader={({ section: { title } }) => (
           <TextList>{title}</TextList>
         )}
+        scrollEnabled={false}
         showsVerticalScrollIndicator={false}
-        style={{ marginTop: 32 }}
+        style={{ marginTop: 20 }}
       />
     </Container>
   )
