@@ -17,6 +17,7 @@ type ButtonRenderProps = {
 type ButtonProps = TouchableOpacityProps & {
   title?: string
   icon?: keyof typeof ICONS
+  isOutline?: boolean
 }
 
 const ICONS = {
@@ -37,16 +38,19 @@ function ButtonDefault({ title, ...rest }: ButtonProps) {
   )
 }
 
-function ButtonIcon({ icon = "add", title, ...rest }: ButtonProps) {
+function ButtonIcon({ icon = "add", title, isOutline, ...rest }: ButtonProps) {
   const Icon = ICONS[icon]
   return (
-    <ContainerButtonIcon {...rest}>
+    <ContainerButtonIcon
+      outline={isOutline}
+      {...rest}
+    >
       <Icon
         size={18}
         color={icon === "delete" ? "#000" : "#fff"}
       />
 
-      <TitleButton>{title}</TitleButton>
+      <TitleButton outline={isOutline}>{title}</TitleButton>
     </ContainerButtonIcon>
   )
 }

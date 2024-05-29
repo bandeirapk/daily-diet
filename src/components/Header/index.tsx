@@ -17,11 +17,10 @@ type HeaderPropsWithChildren = HeaderProps & {
   children: ReactNode
 }
 
-type HeaderStatisticsProps = HeaderProps & TouchableOpacityProps
-
-type HeaderTitleProps = {
-  title: string
-} & TouchableOpacityProps
+type HeaderComponentProps = HeaderProps &
+  TouchableOpacityProps & {
+    title?: string
+  }
 
 function Header({
   children,
@@ -31,9 +30,9 @@ function Header({
 }
 
 function HeaderTitleStatistics({
-  healthyMealHeader,
+  healthyMealHeader = "default",
   ...rest
-}: HeaderStatisticsProps) {
+}: HeaderComponentProps) {
   return (
     <Fragment>
       <IconContainerStatistics {...rest}>
@@ -48,11 +47,15 @@ function HeaderTitleStatistics({
   )
 }
 
-function HeaderTitleDefault({ title, ...rest }: HeaderTitleProps) {
+function HeaderTitleDefault({
+  title,
+  healthyMealHeader,
+  ...rest
+}: HeaderComponentProps) {
   return (
     <Fragment>
       <IconContainerStatistics {...rest}>
-        <Icon />
+        <Icon healthyMealHeader={healthyMealHeader} />
       </IconContainerStatistics>
 
       <DefaultContainerHeader>

@@ -7,7 +7,7 @@ export type HeaderProps = {
 }
 
 export const Container = styled.View<HeaderProps>`
-  padding: 44px 24px;
+  padding: 36px 24px;
 
   background-color: ${({ theme, healthyMealHeader }) => {
     switch (healthyMealHeader) {
@@ -17,7 +17,7 @@ export const Container = styled.View<HeaderProps>`
         return theme.COLORS.GREEN_LIGHT
       case "default":
       default:
-        return theme.COLORS.GRAY_500 // A cor cinza para o estado padrão
+        return theme.COLORS.GRAY_500
     }
   }};
 `
