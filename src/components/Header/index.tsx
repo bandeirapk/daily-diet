@@ -1,4 +1,5 @@
-import { ReactNode } from "react"
+import { Fragment, ReactNode } from "react"
+import { TouchableOpacityProps } from "react-native"
 
 import {
   Container,
@@ -8,44 +9,56 @@ import {
   Icon,
   IconContainerStatistics,
   DefaultContainerHeader,
-  HeaderStatisticsContainer
+  HeaderStatisticsContainer,
+  HeaderProps
 } from "./styles"
 
-type HeaderProps = {
+type HeaderPropsWithChildren = HeaderProps & {
   children: ReactNode
-  bgGreen?: boolean
 }
 
-function Header({ children, bgGreen }: HeaderProps) {
-  return <Container isBgGreen={bgGreen}>{children}</Container>
+type HeaderStatisticsProps = HeaderProps & TouchableOpacityProps
+
+type HeaderTitleProps = {
+  title: string
+} & TouchableOpacityProps
+
+function Header({
+  children,
+  healthyMealHeader = "default"
+}: HeaderPropsWithChildren) {
+  return <Container healthyMealHeader={healthyMealHeader}>{children}</Container>
 }
 
-function HeaderTitleStatistics() {
+function HeaderTitleStatistics({
+  healthyMealHeader,
+  ...rest
+}: HeaderStatisticsProps) {
   return (
-    <>
-      <IconContainerStatistics>
-        <Icon />
+    <Fragment>
+      <IconContainerStatistics {...rest}>
+        <Icon healthyMealHeader={healthyMealHeader} />
       </IconContainerStatistics>
 
       <HeaderStatisticsContainer>
         <Title>90,86%</Title>
         <Subtitle>das refeições dentro da dieta</Subtitle>
       </HeaderStatisticsContainer>
-    </>
+    </Fragment>
   )
 }
 
-function HeaderTitleDefault() {
+function HeaderTitleDefault({ title, ...rest }: HeaderTitleProps) {
   return (
-    <>
-      <IconContainerStatistics>
+    <Fragment>
+      <IconContainerStatistics {...rest}>
         <Icon />
       </IconContainerStatistics>
 
       <DefaultContainerHeader>
-        <TitleHeader>Nova refeição</TitleHeader>
+        <TitleHeader>{title}</TitleHeader>
       </DefaultContainerHeader>
-    </>
+    </Fragment>
   )
 }
 

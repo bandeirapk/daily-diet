@@ -17,8 +17,8 @@ export function Statistics() {
 
   return (
     <Container>
-      <Header bgGreen>
-        <Header.Statistics />
+      <Header healthyMealHeader="diet">
+        <Header.Statistics healthyMealHeader="diet" />
       </Header>
 
       <Content>

@@ -34,7 +34,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <Feedback /> : <Loading />}
+        {fontsLoaded ? <Statistics /> : <Loading />}
       </View>
     </ThemeProvider>
   )

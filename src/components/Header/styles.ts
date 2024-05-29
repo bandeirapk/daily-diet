@@ -2,15 +2,24 @@ import styled, { css } from "styled-components/native"
 
 import { ArrowLeft } from "phosphor-react-native"
 
-type HeaderProps = {
-  isBgGreen?: boolean
+export type HeaderProps = {
+  healthyMealHeader?: "diet" | "noDiet" | "default"
 }
 
 export const Container = styled.View<HeaderProps>`
   padding: 44px 24px;
 
-  background-color: ${({ theme, isBgGreen }) =>
-    isBgGreen ? theme.COLORS.GREEN_LIGHT : theme.COLORS.GRAY_500};
+  background-color: ${({ theme, healthyMealHeader }) => {
+    switch (healthyMealHeader) {
+      case "noDiet":
+        return theme.COLORS.RED_LIGHT
+      case "diet":
+        return theme.COLORS.GREEN_LIGHT
+      case "default":
+      default:
+        return theme.COLORS.GRAY_500 // A cor cinza para o estado padrão
+    }
+  }};
 `
 
 export const HeaderStatisticsContainer = styled.View`
@@ -19,9 +28,14 @@ export const HeaderStatisticsContainer = styled.View`
 `
 
 export const Icon = styled(ArrowLeft).attrs<HeaderProps>(
-  ({ theme, isBgGreen }) => ({
+  ({ theme, healthyMealHeader }) => ({
     size: 24,
-    color: isBgGreen ? theme.COLORS.GREEN_DARK : theme.COLORS.GRAY_200
+    color:
+      healthyMealHeader === "diet"
+        ? theme.COLORS.GREEN_DARK
+        : healthyMealHeader === "noDiet"
+        ? theme.COLORS.RED_DARK
+        : theme.COLORS.GRAY_200
   })
 )``
 
